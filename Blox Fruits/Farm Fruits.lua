@@ -40,4 +40,4 @@ Store = true  --------------------------------Auto Store after it got the fruit
 Safeplace = true ----------------------------- Safeplace 
 Repeat = true --------------------------------- Repeat continues hopping
 -----------------------------------------------------------------------
-loadstring(game:HttpGet"https://gist.githubusercontent.com/NotHubris/4e6fdc88d84c30afa9b28c590f273bbf/raw")()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/StarPikicito/Random-Scripts/main/Blox%20Fruits/Main%20Fruits")()
