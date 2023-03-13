@@ -125,7 +125,7 @@ task_defer(function()
 end)
 end)
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/GreenDeno/Venyx-UI-Library/main/source.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/StarPikicito/Random-Scripts/main/Strongman%20Simulator/UI.lua"))()
 local venyx = library.new("Strongman Simulator", 5013109572)
 
 local main = venyx:addPage("Main", 5012544693)
