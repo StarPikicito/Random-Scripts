@@ -3,8 +3,8 @@
 repeat task.wait() until game:isLoaded()
 
 local function hasKey()
-    print('[Vision] Key Detected')
-    print('[Vision] Starting Vision')
+    print('[Vision] Clave detectada')
+    print('[Vision] Visión inicial')
     local success, err = pcall(function() loadstring(game:HttpGet("https://visionhub.dev/script.lua"))() end)
     if not success then
         print('[Vision] Error: ' .. err)
@@ -13,9 +13,9 @@ end
 
 -- // Key loader
 if not isfolder("Vision/Core") then
-    print("[Vision] Making folders...")
+    print("[Vision] Haciendo carpetas...")
     makefolder("Vision/Core")
-    print("[Vision] Folders made!")
+    print("[Vision] Carpetas hechas!")
 end
 
 if isfile("Vision/Core/auth.txt") then
@@ -139,7 +139,7 @@ local PopupCorner = Instance.new("UICorner")
 PopupCorner.Parent = Popup
 PopupCorner.CornerRadius = UDim.new(0, 10)
 
-UserIcon.Name = "UserIcon"
+UserIcon.Name = "Icono de usuario"
 UserIcon.Parent = Frame
 UserIcon.AnchorPoint = Vector2.new(0.5, 0.5)
 UserIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -154,7 +154,7 @@ UICorner.Parent = UserIcon
 
 UICorner_2.Parent = Frame
 
-UserLabel.Name = "UserLabel"
+UserLabel.Name = "Etiqueta de usuario"
 UserLabel.Parent = Frame
 UserLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 UserLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -163,11 +163,11 @@ UserLabel.BorderSizePixel = 0
 UserLabel.Position = UDim2.new(0.50000006, 0, 0.421576917, 0)
 UserLabel.Size = UDim2.new(0.800000012, 0, 0.0547846109, 0)
 UserLabel.Font = Enum.Font.Gotham
-UserLabel.Text = "Welcome, VisionWinning."
+UserLabel.Text = "Bienvenido, Visión Ganadora"
 UserLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 UserLabel.TextSize = 22.000
 
-Arrow.Name = "Arrow"
+Arrow.Name = "Flecha"
 Arrow.Parent = Frame
 Arrow.Active = false
 Arrow.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -179,7 +179,7 @@ Arrow.Size = UDim2.new(0, 40, 0, 40)
 Arrow.Image = "rbxassetid://9848730084"
 Arrow.ImageColor3 = Color3.fromRGB(255, 255, 255)
 
-Exit.Name = "Exit"
+Exit.Name = "Salir"
 Exit.Parent = Frame
 Exit.Active = false
 Exit.AnchorPoint = Vector2.new(0.5, 0.5)
@@ -198,7 +198,7 @@ ExitCorner.CornerRadius = UDim.new(0.2, 0)
 
 UICorner_3.Parent = Arrow
 
-Description.Name = "Description"
+Description.Name = "Descripción"
 Description.Parent = Frame
 Description.AnchorPoint = Vector2.new(0.5, 0.5)
 Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -207,7 +207,7 @@ Description.BorderSizePixel = 0
 Description.Position = UDim2.new(0.50000006, 0, 0.573192418, 0)
 Description.Size = UDim2.new(0.830853164, 0, 0.22661534, 0)
 Description.Font = Enum.Font.Gotham
-Description.Text = "Visit https://visionhub.dev/key or purchase Vision Plus to get your key."
+Description.Text = "Visita https://visionhub.dev/key o compre Vision Plus para obtener su Key."
 Description.TextColor3 = Color3.fromRGB(152, 152, 152)
 Description.TextSize = 18.000
 Description.TextWrapped = true
@@ -300,7 +300,7 @@ local thumbSize = Enum.ThumbnailSize.Size420x420
 local content, isReady = Players:GetUserThumbnailAsync(userId, thumbType, thumbSize)
 UserIcon.Image = content
 
-UserLabel.Text = "Welcome "..Player.Name.."!"
+UserLabel.Text = "Bienvenido/a "..Player.Name.."!"
 
 Arrow.MouseButton1Click:Connect(function()
     local TweenService = game:GetService("TweenService")
@@ -369,13 +369,13 @@ Arrow.MouseButton1Click:Connect(function()
             if not isFocused then
                 if not string.find(KeyInput.PlaceholderText, "|") then
                     wait(0.5)
-                    KeyInput.PlaceholderText = " Key Here|"
+                    KeyInput.PlaceholderText = " Key aquí|"
                 else
                     wait(0.5)
-                    KeyInput.PlaceholderText = "Key Here"
+                    KeyInput.PlaceholderText = "Key aquí"
                 end
             else
-                KeyInput.PlaceholderText = "Key Here"
+                KeyInput.PlaceholderText = "Key aquí"
             end
         end
     end)()
@@ -438,15 +438,15 @@ KeyInput.FocusLost:Connect(function()
 
     if string.len(KeyInput.Text) >= 41 then
         PopupShow({
-            Title = "Key Too Long",
-            Text = "The key you entered is too long. Please try again.",
+            Title = "Key demasiado larga",
+            Text = "La Key que ingresó es demasiado larga. Inténtalo de nuevo.",
             Icon = "rbxassetid://9838873385",
             IconColor = Color3.fromRGB(255, 120, 120)
         })
     elseif string.len(KeyInput.Text) <= 39 then
         PopupShow({
-            Title = "Key Too Short",
-            Text = "The key you entered is too short. Please try again.",
+            Title = "Key demasiado corta",
+            Text = "La Key que ingresó es demasiado corta. Inténtalo de nuevo.",
             Icon = "rbxassetid://9838873385",
             IconColor = Color3.fromRGB(255, 120, 120)
         })
@@ -461,8 +461,8 @@ KeyInput.FocusLost:Connect(function()
         if response.Body == 'Active' or response.Body == 'Assigned' then
             PopupShow({
                 DestroyAfter = true,
-                Title = "Valid Key",
-                Text = "The key you entered is valid.",
+                Title = "Key válida",
+                Text = "La Key que ingresó es válida.",
                 Icon = "rbxassetid://9838873385",
                 IconColor = Color3.fromRGB(120, 255, 120)
             })
@@ -470,8 +470,8 @@ KeyInput.FocusLost:Connect(function()
             hasKey()
         else
             PopupShow({
-                Title = "Key Invalid",
-                Text = "The key you entered is not valid. Check for any spaces.",
+                Title = "Key no válida",
+                Text = "La Key que ingresó no es válida. Compruebe si hay espacios.",
                 Icon = "rbxassetid://9838873385",
                 IconColor = Color3.fromRGB(255, 120, 120)
             })
