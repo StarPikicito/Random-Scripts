@@ -5,7 +5,7 @@ AutoBuyRandomFruit = true, -- true or false
 AutoStore = true, -- true or false
 ContinueHopAfterStoredFruit = true, -- true or false
 WebhURL = "", --Put your webhook links in here
-WebhPingEveryone = true, -- true or false
+WebhPingEveryone = false, -- true or false
 WantedFruits = {
     "Kilo Fruit",
     "Spin Fruit",
@@ -44,4 +44,4 @@ WantedFruits = {
     --List of fruits, delete fruits that you don't want
 }
 }
-loadstring(game:HttpGetAsync("https://visionhub.dev/loader.lua"))()
+loadstring(game:HttpGet"https://raw.githubusercontent.com/StarPikicito/Random-Scripts/main/Blox%20test/loader.lua")()
