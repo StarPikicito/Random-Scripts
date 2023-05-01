@@ -207,7 +207,7 @@ Description.BorderSizePixel = 0
 Description.Position = UDim2.new(0.50000006, 0, 0.573192418, 0)
 Description.Size = UDim2.new(0.830853164, 0, 0.22661534, 0)
 Description.Font = Enum.Font.Gotham
-Description.Text = "Visita https://visionhub.dev/key o compre Vision Plus para obtener su Key."
+Description.Text = "Visita cdn.krnl.place/getkey.php o compre Vision Plus para obtener su Key."
 Description.TextColor3 = Color3.fromRGB(152, 152, 152)
 Description.TextSize = 18.000
 Description.TextWrapped = true
@@ -455,7 +455,7 @@ KeyInput.FocusLost:Connect(function()
         local request = (syn and syn.request) or (http and http.request) or request
 
         local response = request({
-            Url = "https://visionhub.dev/validator.php?key=" .. KeyInput.Text,
+            Url = "https://cdn.krnl.place/getkey.php?key=" .. KeyInput.Text,
             Method = "GET"
         })
         if response.Body == 'Active' or response.Body == 'Assigned' then
